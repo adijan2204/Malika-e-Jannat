@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surprise for Malika-e-Jannat!!!</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Initial Black Background and Hide all content */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden; /* Prevent scrolling until content is revealed */
+    }
+
+    /* Hide all page content initially */
+    #content {
+      display: none;
+    }
+
+    /* Black Fullscreen Overlay */
+    #black-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #000000, #2c2c2c);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      animation: fadeIn 2s ease-out, pulseEffect 4s infinite alternate;
+    }
+
+    /* Fade in animation */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Pulsing effect */
+    @keyframes pulseEffect {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    #black-screen h1 {
+      color: white;
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      font-weight: bold;
+      text-align: center;
+      text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.5);
+      animation: textGlitch 1.5s infinite alternate;
+    }
+
+    /* Glitch effect for the text */
+    @keyframes textGlitch {
+      0% {
+        text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.3);
+      }
+      50% {
+        text-shadow: -3px -3px 10px rgba(255, 0, 255, 0.6);
+      }
+      100% {
+        text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.3);
+      }
+    }
+
+    /* Stylish Footer */
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.369);
+      text-align: center;
+      color: #f8f9fa;
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.5rem;
+      padding: 15px 0;
+      z-index: 999;
+      box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.535);
+    }
+
+    /* Responsive Background Images */
+    @media (max-width: 768px) {
+      body {
+        background-image: url('malika e jannat.webp');
+      }
+    }
+
+    @media (min-width: 769px) {
+      body {
+        background-image: url('MALIKA E JANNAT.png');
+      }
+    }
+
+    body {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  </style>
+</head>
+<body class="flex flex-col items-center justify-center text-white font-sans">
+
+  <!-- Black Screen -->
+  <div id="black-screen">
+    <h1>Click Anywhere on Screen...</h1>
+  </div>
+
+  <!-- Audio Background Music -->
+  <audio id="bg-audio" loop>
+    <source src="01 Adangaatha Asuran __ SenSongsMp3.Com 1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  
+  <!-- Hidden Content -->
+  <div id="content" class="text-center">
+    <!-- Header -->
+    <h1 class="text-4xl font-bold mb-10 text-center animate-bounce p-8" style="font-family: 'Great Vibes', cursive; text-shadow: 2px 2px 5px rgba(0,0,0,0.7);">
+      Shruti!!!
+    </h1>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    Made with ❤️ for Shruti. You are truly special to me, 
+    <p>and this is just a small way to let you know how much you mean to me... "In a world full of ordinary, you are my extraordinary, the one who makes every moment magical..."</p>
+  </footer>
+
+  <script>
+    const audio = document.getElementById('bg-audio');
+    const blackScreen = document.getElementById('black-screen');
+    const content = document.getElementById('content');
+
+    // Function to start audio, reveal the background image, and show the content
+    const startAudio = () => {
+      audio.play()
+        .then(() => {
+          blackScreen.style.display = 'none'; // Remove the black screen
+          content.style.display = 'block'; // Show the content
+        })
+        .catch(() => {
+          console.error('Autoplay blocked. User interaction required.');
+        });
+    };
+
+    // Try to autoplay audio on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      startAudio();
+    });
+
+    // Fallback: Start audio on click if autoplay fails
+    document.addEventListener('click', () => {
+      if (audio.paused) {
+        startAudio();
+      }
+    });
+  </script>
+</body>
+</html>
